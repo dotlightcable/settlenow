@@ -19,7 +19,7 @@ An invoice-advance vault: deterministic quote engine (tier base 92/90/82%, tenor
 Next.js App Router + Solana wallet adapter + Anchor vault program + Supabase (post-hackathon persistence) + Vercel. Demo runs on deterministic mocks + localStorage (zero keys). Quote engine is a pure dependency-free TS function; demo ledger is SQLite (schema.sql + demo_seed.py, seed 20261006, $500 pilot cap, 1.5% fee asserts).
 
 --- Live demo URL ---
-https://settlenow-dtfrf8g2a-joyce-4f3d.vercel.app/ — demo path: /upload -> /dashboard -> /pay/INV-2001>
+https://settlenow-joyce-4f3d.vercel.app/ — demo path: /upload -> /dashboard -> /pay/INV-2001 (AI scan at /api/scan, live)
 
 --- Demo video URL ---
 <PASTE VIDEO URL HERE — 2-min script in submission/VIDEO_SCRIPT.md>
