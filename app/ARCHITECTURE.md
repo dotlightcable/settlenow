@@ -29,6 +29,7 @@ Supplier          SettleNow (Next.js)            Solana (devnet)           Payer
 - **Vault store** (`lib/store.ts` + `lib/mock.ts`): demo persistence. Three deterministic seed vaults (INV-1001…1003); user-created vaults (INV-2001+) persist in `localStorage`. `fakeSig(seed)` derives stable, syntactically-valid base58-ish signatures so every explorer link works as a link shape without a real tx.
 - **Pay-link page** (`app/pay/[id]/page.tsx`): public route for the payer. Shows face due, advance already paid out, mock checkout button → `markRepaid()` → status flips, repay tx appears.
 - **Dashboard** (`app/dashboard/page.tsx`): all vaults (user + seeds) with totals, status pills, pay-links, and devnet explorer links for both legs.
+- **Scan API** (`app/api/scan/route.ts`): `POST` multipart `{ file }` (image/PDF ≤10MB) → Gemini vision (`inline_data`, `GEMINI_MODEL` default `gemini-2.0-flash`) extracts `{ payer, payer_email, face_amount, due_date }`. No key or any failure → deterministic mock (same defaults as the upload form, `mock: true`). Never 500s on missing key; never blocks the demo. Upload page "Scan invoice" button previews the file, prefills the form, user confirms → existing quote flow unchanged.
 - **Quote API** (`app/api/quote/route.ts`): `GET` returns usage + example; `POST` validates `{ amount, dueDate, riskTier }` and returns the same `QuoteResult` the UI renders.
 
 ## Data model (demo)

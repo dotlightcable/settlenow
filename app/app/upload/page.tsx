@@ -20,6 +20,45 @@ export default function UploadPage() {
   const [riskTier, setRiskTier] = useState<RiskTier>("standard");
   const [fileName, setFileName] = useState("invoice-INV-2026-041.pdf");
   const [created, setCreated] = useState<Vault | null>(null);
+  const [scanFile, setScanFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [scanning, setScanning] = useState(false);
+  const [scanNote, setScanNote] = useState<string | null>(null);
+
+  function pickScan(f: File | null) {
+    setScanFile(f);
+    setScanNote(null);
+    if (previewUrl) URL.revokeObjectURL(previewUrl);
+    setPreviewUrl(f ? URL.createObjectURL(f) : null);
+    if (f) setFileName(f.name);
+  }
+
+  async function scanInvoice() {
+    if (!scanFile || scanning) return;
+    setScanning(true);
+    setScanNote(null);
+    try {
+      const form = new FormData();
+      form.append("file", scanFile);
+      const res = await fetch("/api/scan", { method: "POST", body: form });
+      const j = await res.json();
+      if (typeof j.payer === "string" && j.payer) setPayer(j.payer);
+      if (typeof j.payer_email === "string") setPayerEmail(j.payer_email);
+      if (typeof j.face_amount === "number" && j.face_amount > 0)
+        setAmount(String(j.face_amount));
+      if (typeof j.due_date === "string" && /^\d{4}-\d{2}-\d{2}$/.test(j.due_date))
+        setDueDate(j.due_date);
+      setScanNote(
+        j.mock
+          ? "Scan unavailable (demo mock) — fields prefilled, please confirm."
+          : "Fields extracted from invoice — please confirm."
+      );
+    } catch {
+      setScanNote("Scan failed — fill the form manually.");
+    } finally {
+      setScanning(false);
+    }
+  }
 
   const quote = useMemo(() => {
     const n = Number(amount);
@@ -54,6 +93,29 @@ export default function UploadPage() {
     <div>
       <h1>Upload invoice</h1>
       <p className="mut">Enter invoice details — the quote engine prices the advance instantly. No wallet or keys needed for the demo.</p>
+
+      <div className="card" style={{ marginBottom: 16 }}>
+        <h3 style={{ marginTop: 0 }}>Scan invoice (AI)</h3>
+        <p className="mut small">Pick an invoice image or PDF — AI extracts payer, amount, due date and prefills the form. Confirm before accepting the quote.</p>
+        <div className="btnrow">
+          <input
+            type="file"
+            accept="image/*,application/pdf"
+            onChange={(e) => pickScan(e.target.files?.[0] ?? null)}
+          />
+          <button className="btn" onClick={scanInvoice} disabled={!scanFile || scanning}>
+            {scanning ? "Scanning…" : "Scan invoice"}
+          </button>
+        </div>
+        {previewUrl && scanFile?.type.startsWith("image/") && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={previewUrl} alt="invoice preview" style={{ maxWidth: "100%", maxHeight: 240, marginTop: 8 }} />
+        )}
+        {previewUrl && scanFile?.type === "application/pdf" && (
+          <p className="mono small" style={{ marginTop: 8 }}>{scanFile.name} (PDF preview n/a — will be scanned on submit)</p>
+        )}
+        {scanNote && <p className="mut small">{scanNote}</p>}
+      </div>
 
       <div className="form">
         <div className="two">
