@@ -1,0 +1,46 @@
+=== COLOSSEUM CRYPTO WORLD'S FAIR — COPY-PASTE ANSWERS (SettleNow, team aga) ===
+
+--- Project name ---
+SettleNow
+
+--- One-line pitch / tagline ---
+SettleNow gives suppliers 90% of any invoice in USDC within seconds — upload, accept the quote, share a pay-link, vault closes on repayment.
+
+--- Elevator pitch (short description) ---
+Small suppliers wait 30-90 days to get paid, and factoring ignores small invoices. SettleNow advances ~90% in USDC instantly: upload the invoice, get a transparent deterministic quote (1.5% fee), the advance lands from an escrow vault, and the payer repays via a shareable pay-link that closes the vault. Live 60-second demo, no wallet or keys required.
+
+--- Problem ---
+B2B suppliers wait 30-90 days on invoices; traditional factoring is slow, paper-heavy, opaque on rates, and uneconomical under ~$10k. A $485 logistics invoice simply isn't factorable, so small suppliers absorb the cash-flow gap.
+
+--- Solution ---
+An invoice-advance vault: deterministic quote engine (tier base 92/90/82%, tenor/size haircuts, fee = base + 2bps/day capped 800bps) + Solana Anchor escrow vault (PDA per invoice, fund_advance / repay_close) + shareable payer pay-link + dashboard with devnet explorer links on both legs. UI and API share the same pure pricing function, so quotes can never disagree.
+
+--- How it's built / tech stack ---
+Next.js App Router + Solana wallet adapter + Anchor vault program + Supabase (post-hackathon persistence) + Vercel. Demo runs on deterministic mocks + localStorage (zero keys). Quote engine is a pure dependency-free TS function; demo ledger is SQLite (schema.sql + demo_seed.py, seed 20261006, $500 pilot cap, 1.5% fee asserts).
+
+--- Live demo URL ---
+<PASTE VERCEL/LOCAL URL HERE — local: http://localhost:3000; demo path: /upload -> /dashboard -> /pay/INV-2001>
+
+--- Demo video URL ---
+<PASTE VIDEO URL HERE — 2-min script in submission/VIDEO_SCRIPT.md>
+
+--- Repo URL ---
+<PASTE GITHUB URL HERE>
+
+--- Tracks ---
+Primary: Tempo. Secondary: Solana. Also: General/Open.
+
+--- Why Tempo ---
+Settlement-rail fit: instant cheap USDC advances and payer repayments; the pay-link checkout maps directly onto Tempo payments as the primary rail.
+
+--- Why Solana ---
+Anchor escrow vault (PDA per invoice, fund_advance / repay_close instructions), wallet-adapter advance claims, devnet explorer links on advance + repay legs; program at programs/settlenow/src/lib.rs (anchor build / cargo check pass).
+
+--- Open-source & composability ---
+Fully inspectable repo; quoteInvoice() is pure/dependency-free and exposed via POST /api/quote so any protocol can reuse pricing; per-invoice vault PDAs let lending/credit/insurance protocols compose on top. Deterministic seeds (seed vaults, tx sigs, pinnable `now`) make every run reproducible.
+
+--- Team (aga) ---
+Solo builder el — full-stack + Solana/Anchor; built the vault program, quote engine, Next.js demo, and demo ledger end to end (all builds verified Oct 6).
+
+--- Status / traction ---
+Hackathon demo: working end-to-end mock loop (upload -> 90% quote -> advance -> pay-link -> repaid) plus Anchor vault program and SQLite demo ledger with real-shaped invoice INV-2026-ACME-0481 ($485.25). Pre-mainnet; production path (Supabase, signed pay-links, credit scoring, Vercel) in ARCHITECTURE.md.

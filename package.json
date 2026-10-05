@@ -1,0 +1,12 @@
+{
+  "name": "settlenow",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "mocha --require ts-node/register tests/settlenow.ts"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

@@ -1,0 +1,19 @@
+[package]
+name = "settlenow"
+version = "0.1.0"
+description = "SettleNow invoice-advance escrow vault (Tempo primary, Solana secondary, USDC devnet)"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "settlenow"
+
+[features]
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-idl"]
+default = []
+
+[dependencies]
+anchor-lang = "0.31.1"
+anchor-spl = "0.31.1"

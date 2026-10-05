@@ -1,0 +1,3 @@
+# Root has no Python runtime dependencies — demo_seed.py is stdlib-only
+# (argparse, random, sqlite3, pathlib). Nothing to pip install.
+# The Next.js app's pinned JS deps live in app/package.json (npm is source of truth).

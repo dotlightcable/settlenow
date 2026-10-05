@@ -1,0 +1,7 @@
+next==14.2.5
+react==18.3.1
+react-dom==18.3.1
+typescript==5.4.5
+# NOTE: This is a Node.js (Next.js) project — `npm install` is the source of truth.
+# This file lists the equivalent pinned JS dependencies for auditability.
+# Python tooling used only for offline verification scripts (no runtime dependency).
