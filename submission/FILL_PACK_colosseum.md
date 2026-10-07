@@ -101,7 +101,7 @@ https://settlenow-joyce-4f3d.vercel.app/
 None needed — no login, no credentials, no wallet. The demo runs on built-in deterministic data. Suggested path: /upload → accept the quote → /dashboard → pay-link → repaid.
 
 [Pitch video]  (YouTube/Loom/Vimeo, up to 2 min — introduce yourselves, tell us what you're building and why you're the people to build it)
-<PITCH VIDEO URL — el records this, script below>
+https://www.youtube.com/watch?v=3AkDIgr5068 (narrated version, unlisted — replace with camera version if time allows)
 
 [Pitch video script — 2 min, talk to camera]
 "Hi, I'm [name] from team aga, and this is SettleNow.

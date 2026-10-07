@@ -1,0 +1,5 @@
+file '/home/star/settlenow/video/p1-title.mp4'
+file '/home/star/settlenow/video/p2-problem.mp4'
+file '/home/star/settlenow/video/p3-product.mp4'
+file '/home/star/settlenow/video/p4-why.mp4'
+file '/home/star/settlenow/video/p5-close.mp4'
