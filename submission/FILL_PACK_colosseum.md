@@ -64,7 +64,7 @@ No
 Indonesia
 
 [Please share a team Telegram contact]
-+62 85157426655 (Telegram, number provided by founder)
+@dbugget2 (+62 85157426655) (Telegram, number provided by founder)
 
 [Did anyone not listed on the team here do meaningful work on this project? If so, please explain.]  (max 600)
 No other people. The build was developed by the one listed founder (aga) using AI coding agents — OpenCode CLI and Claude Code — as implementation tools, directed end to end by the founder: product definition, target market and track selection, quote-engine parameters (advance tiers, fee curve, pilot cap), escrow design decisions, the demo narrative, and the video script. AI agents wrote a large share of the code under that direction; all code, claims, and numbers in this submission were reviewed and verified by the founder before submitting.
@@ -189,7 +189,7 @@ No
 ################################################################
 ## STILL BLOCKED — NEED FROM EL
 ################################################################
-1. Telegram contact — DONE: +62 85157426655 (filed Oct 7)
+1. Telegram contact — DONE: @dbugget2 (+62 85157426655) (filed Oct 7)
 2. Country — DONE: Indonesia (filed Oct 7)
 3. Pitch video — Joyce-built narrated version (founder elected TTS over camera, Oct 7); replace with camera version if time allows
 4. Demo video YouTube link — DONE: https://www.youtube.com/watch?v=ywwId_H1NUo
