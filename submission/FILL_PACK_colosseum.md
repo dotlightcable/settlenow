@@ -61,10 +61,10 @@ Payments & Remittance  (already selected — keep)
 No
 
 [Where is your team primarily based?]  (Public)
-<NEED FROM EL — country of residence>  (Indonesia, if correct)
+Indonesia
 
 [Please share a team Telegram contact]
-<NEED FROM EL — used for prize distribution + accelerator interviews>
++62 857-5629-1356 (Telegram, number provided by founder)
 
 [Did anyone not listed on the team here do meaningful work on this project? If so, please explain.]  (max 600)
 No other people. The build was developed by the one listed founder (aga) using AI coding agents — OpenCode CLI and Claude Code — as implementation tools, directed end to end by the founder: product definition, target market and track selection, quote-engine parameters (advance tiers, fee curve, pilot cap), escrow design decisions, the demo narrative, and the video script. AI agents wrote a large share of the code under that direction; all code, claims, and numbers in this submission were reviewed and verified by the founder before submitting.
@@ -89,7 +89,7 @@ The repo is a monorepo for one product in two parts. /app is the Next.js product
 Nothing in the repo is unrelated filler: every directory serves the one flow in the live demo. The demo runs on mocks by design, so judges see the full loop without credentials.
 
 [Please submit a demo video of your product]  (YouTube/Loom/Vimeo, up to 3 min)
-<YOUTUBE URL — being uploaded now>
+https://www.youtube.com/watch?v=ywwId_H1NUo  (Unlisted, verified viewable)
 
 [Show demo video on the public project page]
 ☑ Yes
@@ -170,7 +170,7 @@ Built inside the hackathon window, and yes — effectively full time since the e
 The product definition came first: choosing the exact customer (the supplier whose invoice is too small to factor), then designing the quote curve and the $500 pilot cap around what makes that customer viable to serve, and only then building the loop. Scope was deliberately kept to one flow rather than a broad platform, because a working narrow product beats a wide one that half-works.
 
 [Where is each member of the team currently based, and do you work in-person together?]  (max 500)
-One member: aga, based in <NEED FROM EL — country/city>. Solo team, so working "in person" is not applicable — all work happens in one workspace, and there is no coordination overhead.
+One member: aga, based in Indonesia. Solo team, so working "in person" is not applicable — all work happens in one workspace, and there is no coordination overhead.
 
 If funded, the plan is to remain based there while serving international clients, since the product is inherently remote and the customer base (small suppliers invoicing larger clients across borders) is not geographic. Relocation is not required for the business to work, though I would take advantage of any in-person program time the accelerator offers.
 
@@ -189,8 +189,8 @@ No
 ################################################################
 ## STILL BLOCKED — NEED FROM EL
 ################################################################
-1. Telegram contact (required, prize distribution + accelerator interviews)
-2. Country of residence (required, Public)  — confirm Indonesia?
-3. Pitch video, up to 2 min, you talking to camera (script above)
-4. Demo video YouTube link (upload in progress)
-5. Your own profile "Basics" on Colosseum (team tab shows incomplete)
+1. Telegram contact — DONE: +62 857-5629-1356 (filed Oct 7)
+2. Country — DONE: Indonesia (filed Oct 7)
+3. Pitch video — Joyce-built narrated version (founder elected TTS over camera, Oct 7); replace with camera version if time allows
+4. Demo video YouTube link — DONE: https://www.youtube.com/watch?v=ywwId_H1NUo
+5. Your own profile "Basics" on Colosseum (team tab shows incomplete) — STILL EL (bot-walled for automation)

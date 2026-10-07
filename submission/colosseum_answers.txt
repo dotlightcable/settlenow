@@ -22,10 +22,10 @@ Next.js App Router + Solana wallet adapter + Anchor vault program + Supabase (po
 https://settlenow-joyce-4f3d.vercel.app/ — demo path: /upload -> /dashboard -> /pay/INV-2001 (AI scan at /api/scan, live)
 
 --- Demo video URL ---
-<PASTE VIDEO URL HERE — 2-min script in submission/VIDEO_SCRIPT.md>
+https://www.youtube.com/watch?v=ywwId_H1NUo (Unlisted, 0:47, verified viewable)
 
 --- Repo URL ---
-<PASTE GITHUB URL HERE>
+https://github.com/dotlightcable/settlenow (public)
 
 --- Tracks ---
 Primary: Tempo. Secondary: Solana. Also: General/Open.
